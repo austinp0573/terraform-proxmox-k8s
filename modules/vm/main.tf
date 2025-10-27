@@ -63,4 +63,6 @@ resource "proxmox_virtual_environment_vm" "this" {
 }
 
 
-output "name" { value = proxmox_virtual_environment_vm.this.name }
+output "name" {
+  value = proxmox_virtual_environment_vm.this.name
+}
