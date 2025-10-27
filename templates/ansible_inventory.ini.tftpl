@@ -1,0 +1,19 @@
+[k3s_servers]
+%{ for h in jsondecode(cp_hosts) ~}
+${h.name} ansible_host=${h.ip} ansible_user=${ssh_user}
+%{ endfor ~}
+
+[k3s_agents]
+%{ for h in jsondecode(wk_hosts) ~}
+${h.name} ansible_host=${h.ip} ansible_user=${ssh_user}
+%{ endfor ~}
+
+[k3s:children]
+k3s_servers
+k3s_agents
+
+[k3s_servers:vars]
+kube_vip_ip=${kube_vip_ip}
+
+[metallb:vars]
+address_pool=${metallb_pool}
