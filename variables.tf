@@ -15,7 +15,7 @@ variable "pm_node" {
 }
 
 variable "pm_storage" {
-  default = "local-zfs"
+  type = string
 }
 
 
@@ -96,15 +96,15 @@ variable "node_ips" {
 
 
 variable "metallb_pool" {
-  default = "192.168.1.201-192.168.1.219"
+  type = string
 }
 variable "kube_vip_ip" {
-  default = "192.168.1.200"
+  type = string
 }
 variable "gateway" {
-  default = "192.168.1.1"
+  type = string
 }
 variable "dns_servers" {
   type    = list(string)
-  default = ["192.168.1.1"]
+  default = ["192.168.1.254"]
 }

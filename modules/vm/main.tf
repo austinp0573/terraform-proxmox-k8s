@@ -15,7 +15,12 @@ resource "proxmox_virtual_environment_vm" "this" {
       username = var.ssh_user
       keys     = [var.ssh_pubkey]
     }
-    # DHCP via cloud-init; gateway/DNS handled by router
+    ip_config {
+      ipv4 {
+        address = "192.168.1.4/24"
+        gateway = "192.168.1.254"
+      }
+    }
   }
 
 
@@ -33,6 +38,7 @@ resource "proxmox_virtual_environment_vm" "this" {
     datastore_id = var.pm_storage
     interface    = "scsi0"
     size         = var.disk_gb
+    ssd          = true
   }
 
 

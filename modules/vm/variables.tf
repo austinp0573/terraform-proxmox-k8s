@@ -38,6 +38,11 @@ variable "disk_gb" {
   type = number
 }
 
+variable "ssd" {
+  type    = bool
+  default = true
+}
+
 variable "data_disk_gb" {
   type    = number
   default = 0
