@@ -1,6 +1,5 @@
 *starter_kit.md
-*.tfvars
-.terraform.tfvars
+terraform.tfvars
 .terraform
 backend.tf
 .terraform.lock.hcl
