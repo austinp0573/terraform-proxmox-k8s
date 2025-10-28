@@ -48,6 +48,14 @@ variable "data_disk_gb" {
   default = 0
 }
 
+variable "ip_address" {
+  type = string
+}
+
+variable "gateway" {
+  type = string
+}
+
 variable "domain" {
   type = string
 }

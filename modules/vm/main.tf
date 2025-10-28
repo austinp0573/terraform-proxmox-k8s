@@ -17,8 +17,8 @@ resource "proxmox_virtual_environment_vm" "this" {
     }
     ip_config {
       ipv4 {
-        address = "192.168.1.4/24"
-        gateway = "192.168.1.254"
+        address = "${var.ip_address}/24"
+        gateway = var.gateway
       }
     }
   }

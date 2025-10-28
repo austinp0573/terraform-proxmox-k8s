@@ -17,6 +17,8 @@ module "cp" {
   memory_mb  = var.cp_flavor.memory_mb
   disk_gb    = var.cp_flavor.disk_gb
   domain     = var.domain
+  ip_address = var.node_ips.cp[each.key]
+  gateway    = var.gateway
 }
 
 
@@ -35,6 +37,8 @@ module "wk" {
   disk_gb      = var.wk_flavor.disk_gb
   data_disk_gb = var.wk_flavor.data_disk_gb
   domain       = var.domain
+  ip_address   = var.node_ips.wk[each.key]
+  gateway      = var.gateway
 }
 
 
