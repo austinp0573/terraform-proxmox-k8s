@@ -25,6 +25,7 @@ resource "proxmox_virtual_environment_vm" "this" {
 
 
   cpu {
+    type  = var.cpu_type
     cores = var.cores
   }
 
@@ -39,6 +40,7 @@ resource "proxmox_virtual_environment_vm" "this" {
     interface    = "scsi0"
     size         = var.disk_gb
     ssd          = true
+    discard      = "on"
   }
 
 
@@ -48,6 +50,8 @@ resource "proxmox_virtual_environment_vm" "this" {
       datastore_id = var.pm_storage
       interface    = "scsi1"
       size         = var.data_disk_gb
+      ssd          = true
+      discard      = "on"
     }
   }
 

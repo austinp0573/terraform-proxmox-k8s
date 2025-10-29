@@ -48,11 +48,13 @@ variable "wk_count" {
 
 variable "cp_flavor" {
   type = object(
-    { cores     = number
+    { cpu_type  = string
+      cores     = number
       memory_mb = number
       disk_gb   = number
   })
   default = {
+    cpu_type  = "host"
     cores     = 2
     memory_mb = 6144
     disk_gb   = 40
@@ -62,12 +64,14 @@ variable "cp_flavor" {
 
 variable "wk_flavor" {
   type = object({
+    cpu_type     = string
     cores        = number
     memory_mb    = number
     disk_gb      = number
     data_disk_gb = number
   })
   default = {
+    cpu_type     = "host"
     cores        = 4
     memory_mb    = 12288
     disk_gb      = 60

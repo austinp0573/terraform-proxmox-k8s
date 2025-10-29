@@ -13,6 +13,7 @@ module "cp" {
   bridge     = var.bridge
   ssh_user   = var.ssh_user
   ssh_pubkey = local.ssh_key
+  cpu_type   = var.cp_flavor.cpu_type
   cores      = var.cp_flavor.cores
   memory_mb  = var.cp_flavor.memory_mb
   disk_gb    = var.cp_flavor.disk_gb
@@ -32,6 +33,7 @@ module "wk" {
   bridge       = var.bridge
   ssh_user     = var.ssh_user
   ssh_pubkey   = local.ssh_key
+  cpu_type     = var.wk_flavor.cpu_type
   cores        = var.wk_flavor.cores
   memory_mb    = var.wk_flavor.memory_mb
   disk_gb      = var.wk_flavor.disk_gb

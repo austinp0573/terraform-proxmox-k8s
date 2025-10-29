@@ -14,3 +14,5 @@ creates 3× control-plane + 2× worker VMs on Proxmox from a cloud-init template
 4. go to `ansible-k8s/` → `make k3s` to install the cluster.
 
 > inventory is generated at `../ansible-k8s/inventory/inventory.ini`.
+
+TODO: terraform provisioned clones hostname changed to proxmox GUI hostname

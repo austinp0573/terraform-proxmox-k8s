@@ -19,10 +19,16 @@ variable "bridge" {
 }
 
 variable "ssh_user" {
-  type = string
+  type      = string
+  sensitive = true
 }
 
 variable "ssh_pubkey" {
+  type      = string
+  sensitive = true
+}
+
+variable "cpu_type" {
   type = string
 }
 
@@ -43,13 +49,19 @@ variable "ssd" {
   default = true
 }
 
+variable "discard" {
+  type    = string
+  default = "on"
+}
+
 variable "data_disk_gb" {
   type    = number
   default = 0
 }
 
 variable "ip_address" {
-  type = string
+  type      = string
+  sensitive = true
 }
 
 variable "gateway" {
